@@ -69,7 +69,7 @@ describe('Signup', () => {    //Cadastro
     //         it(`${msg.field} is required`, function(){
     //             signup.alertMessageShouldBe(msg.output)
     //         })
-    //     }) //teste
+    //     })
 
     // })      
     
