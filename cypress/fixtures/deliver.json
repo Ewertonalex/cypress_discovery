@@ -1,0 +1,50 @@
+{
+    "signup": {
+        "name": "Ewerton Alexander",
+        "cpf": "00000014141",
+        "email": "teste@teste.com",
+        "whatsapp": "83999999999",
+        "address": {
+            "postalcode": "58051120",
+            "street": "Rua General Alfredo Floro Cantalice",
+            "number": "269",
+            "details": "Ap 302",
+            "district": "Bancários",
+            "city_state": "João Pessoa/PB"
+        },
+        "delivery_method": "Moto",
+        "cnh": "cnh-digital.jpg"
+    },
+    "cpf_inv": {
+        "name": "Enzo Alexander",
+        "cpf": "x00000141AA",
+        "email": "enzo@hotmail.com",
+        "whatsapp": "83999999999",
+        "address": {
+            "postalcode": "58051120",
+            "street": "Rua General Alfredo Floro Cantalice",
+            "number": "269",
+            "details": "Ap 302",
+            "district": "Bancários",
+            "city_state": "João Pessoa/PB"
+        },
+        "delivery_method": "Moto",
+        "cnh": "cnh-digital.jpg"
+    },
+    "email_inv": {
+        "name": "Ewerton Alexander",
+        "cpf": "00000014141",
+        "email": "teste.com",
+        "whatsapp": "83999999999",
+        "address": {
+            "postalcode": "58051120",
+            "street": "Rua General Alfredo Floro Cantalice",
+            "number": "269",
+            "details": "Ap 302",
+            "district": "Bancários",
+            "city_state": "João Pessoa/PB"
+        },
+        "delivery_method": "Moto",
+        "cnh": "cnh-digital.jpg"
+    }
+}
