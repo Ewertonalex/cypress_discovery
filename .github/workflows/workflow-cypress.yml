@@ -1,0 +1,50 @@
+#nome do projeto
+name: Cypress Regression Tests
+
+#quando vai ser executado? Sempre que tive rum push no projeto 
+on: [push]
+
+jobs:
+
+  #nome - pode ser definido por você
+  ui-chrome-tests:
+    #SO que vai executar o run: 
+    runs-on: ubuntu-latest #constroi uma ""maq virtual pequena"" (container) e vai ter o ubntu instalado
+    #definição do template do container: 
+    container:
+      image: cypress/browsers:node14.17.0-chrome88-ff89
+    strategy:
+      #IMPORTANTE!!! se fail-fast tiver como true (default), a operação para se tiver alguma coisa errado, ex: encontrar um bug. 
+      #Seguir executando se encontrar algum impedimento:
+      fail-fast: false
+    steps:
+      #obter cópida do código e coloca no container que fará execução
+      - name: Checkout
+        uses: actions/checkout@v2
+             
+      #execução dos testes automatizados - nesse caso será no chrome:
+      - name: 'UI Tests - Chrome'
+      #plugin oficial pra testar com cypress dentro do github actions:
+        uses: cypress-io/github-action@v5.0.0
+        with:
+        #instala dependencias no projeto (dev dependecies): 
+          install-command: npm install
+          #variavel (base_url) definida atravaes do settings > secrets
+          #url que será testada - para ver se ta online
+          wait-on: ${{ secrets.BASE_URL }}
+          #aguardar timeout pra saber se URL tá online 
+          wait-on-timeout: 120
+          #browser que será testado
+          browser: chrome
+          #gravar resultado:
+          record: true
+          #agrupar execução do teste:
+          group: 'UI - Chrome'
+          #onde estão as suites:
+          spec: cypress/e2e/*
+        env:
+          #variavel criada para gravar key da gravação dos testes. No: settings > secrets 
+          #chave é dado pelo cypress na criação do projeto na nuvem
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          #Token criada automaticamente pelo github:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
