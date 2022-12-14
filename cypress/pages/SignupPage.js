@@ -26,7 +26,8 @@ class SignupPage {   //padrão de projeto Page Object
         cy.get('input[name="city-uf"]').should('have.value', deliver.address.city_state)
 
         cy.contains('.delivery-method li', deliver.delivery_method).click()  //busca de no campo contem o nome moto e se sim clicar
-        cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh)  //buscando imagem do objeto no caminho mencionado
+        //cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh)  //buscando imagem do objeto no caminho mencionado
+        cy.get('input[accept^="image"]').selectFile('cypress/fixtures/cnh-digital.jpg', {force: true})
     }
 
     submit() {
