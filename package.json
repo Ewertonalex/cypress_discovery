@@ -1,0 +1,24 @@
+{
+  "name": "cypress_discovery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ewertonalex/cypress_discovery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ewertonalex/cypress_discovery/issues"
+  },
+  "homepage": "https://github.com/Ewertonalex/cypress_discovery#readme",
+  "dependencies": {
+    "cypress": "^12.1.0"
+  }
+}
